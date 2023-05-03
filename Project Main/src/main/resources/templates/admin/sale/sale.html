@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sales List</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- CSS -->
+    <link th:href="@{/css/admin.css}" rel="stylesheet"/>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<div class="container">
+    <!-- Side Nav bar starts -->
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
+                    <span class="title">UniformRecycled - Test Admin</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin}" href="#">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/user}" href="#">
+                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                    <span class="title">Users</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/category}" href="#">
+                    <span class="icon"><ion-icon name="copy-outline"></ion-icon></span>
+                    <span class="title">Categories</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/product}" href="#">
+                    <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                    <span class="title">Products</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/sale}" href="#">
+                    <span class="icon"><ion-icon name="cash-outline"></ion-icon></span>
+                    <span class="title">Sales</span>
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/admin/messages}">
+                    <span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
+                    <span class="title">Messages</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="document.getElementById('logout-form').submit()">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign Out</span>
+                </a>
+
+                <form id="logout-form" method="post" th:action="@{/logout}">
+                    <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <!-- Side Nav bar Ends -->
+
+    <!-- Main Section -->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="grid-outline"></ion-icon>
+            </div>
+            <br>
+            <!-- Cards for order types -->
+            <div class="cardbox">
+                <div class="card" onclick="">
+                    <div>
+                        <div class="numbers">New Orders</div>
+                        <a th:href="@{/admin/order?status=new}"></a>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="person-add-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">Accepted Orders</div>
+                        <a th:href="@{/admin/order?status=accepted}"></a>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="checkmark-done-circle-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">Shipping Orders</div>
+                        <a th:href="@{/admin/order?status=shipped}"></a>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="boat-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">Completed Orders</div>
+                        <a th:href="@{/admin/order?status=completed}"></a>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="checkmark-done-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">Cancelled Orders</div>
+                        <a th:href="@{/admin/order?status=cancelled}"></a>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="stop-circle-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <hr class="line">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="cardbox" style="height: 1000px; padding-left: 50px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h1>Sales</h1>
+                        <br>
+
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total Revenue</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="sale : ${sales}">
+                                <td th:text="${sale.id}"></td>
+                                <td th:text="${sale.getProduct().getName()}"></td>
+                                <td>
+                                    <img th:src="@{|${sale.getProduct().image}|}" width="100"/>
+                                </td>
+                                <td th:text="'&pound;' + ${sale.getProduct().getPrice()}"></td>
+                                <td th:text="${sale.getQuantity()}"></td>
+                                <td style="color:green; font-weight:bold;" th:text="'&pound;' + ${sale.getAmount()}"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <script type="module"
+                                src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+                        <script>
+                            // Menu toggle
+                            let toggle = document.querySelector('.toggle');
+                            let navigation = document.querySelector('.navigation');
+                            let main = document.querySelector('.main');
+
+                            toggle.onclick = function () {
+                                navigation.classList.toggle('active');
+                                main.classList.toggle('active');
+                            }
+                            // adding hover class over selected category
+                            let list = document.querySelectorAll('.navigation li');
+
+                            function activeLink() {
+                                list.forEach((item) =>
+                                    item.classList.remove('hovered'));
+                                this.classList.add('hovered');
+                            }
+
+                            list.forEach((item) =>
+                                item.addEventListener('mouseover', activeLink));
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

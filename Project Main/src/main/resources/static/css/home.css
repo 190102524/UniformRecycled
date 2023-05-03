@@ -1,0 +1,630 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+div.img {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+}
+
+.float-container {
+    border: 0px solid #fff;
+    padding: 0px;
+}
+
+.float-child {
+    width: 15%;
+    float: left;
+    padding: 0px;
+    border: 0px solid rgb(255, 255, 255);
+}
+
+@font-face {
+    font-family: Futura;
+    font-weight: 700;
+    font-size: 34px;
+    src: url('../fonts/Futura Bold font.ttf');
+}
+
+h1 {
+    font-family: Futura
+}
+
+
+
+.texta {
+    font-family: Futura;
+    display: inline-block;
+    max-width: 50%;
+    width: 30%;
+}
+
+
+p1 {
+    font-family: Futura;
+    float: right;
+    display: inline-block;
+    max-width: 50%;
+    width: 30%;
+}
+
+
+.button {
+    background-color: rgb(253, 251, 251); /* White */
+    border: none;
+    color: rgb(0, 68, 255, 0.6);
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Futura;
+    font-size: 20px;
+}
+
+.buttontwo {
+    background-color: black; /* Black */
+    border: none;
+    color: black;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Futura;
+    font-size: 20px;
+}
+
+
+#image1 {
+    background-image: linear-gradient(to left, rgb(253, 251, 251), rgb(0, 68, 255, 0.6)), url('../img/image1.jpeg');
+    height: 700px;
+    background-size: cover;
+    color: white;
+    text-align:left;
+    text-transform: uppercase;
+}
+
+/* Container holding the image and the text */
+#image1 .textonhomepage {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/* Bottom left text */
+#image1 .bottom-left {
+    position: absolute;
+    bottom: 7%;
+    left: 35px;
+}
+
+/* Bottom left button */
+#image1 .bottom-left-two {
+    position: absolute;
+    bottom: 1%;
+    left: 35px;
+}
+
+/* Top left text */
+#image1 .top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+/* Top right text */
+#image1 .top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+#image1 .bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+/* Centered text */
+#image1 .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image2 {
+    height: 700px;
+    width: 700px;
+    float: left;
+    padding-left: 5%;
+    background-size: cover;
+}
+
+.image3 {
+    height: 700px;
+    width: 700px;
+    float: right;
+    padding-right: 42%;
+    background-size: cover;
+}
+
+.nav-bar {
+    background-color: rgb(247, 245, 245);
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.nav-bar a {
+    float: left;
+    color: #111111;
+    text-align: center;
+    padding: 14px 16px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-decoration: none;
+    font-size: 17px;
+    height: 50px;
+}
+
+/* Change the color of links on hover */
+.nav-bar a:hover {
+    background-color: rgb(207, 207, 207);
+    color: rgb(255, 255, 255);
+}
+
+/* Add a color to the active/current link */
+.nav-bar a.active {
+    background-color: #cecbd4;
+    color: white;
+}
+
+
+.img
+
+
+#filter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 10%;
+    height: 200px;
+    background-color: rgb(253, 251, 251);
+    background-size: cover;
+    background-position: center;
+    /*padding-left: 0px; moves border right by number of pixels. if ommitted, will return to center*/
+    border-width: thick;
+    border-color: #be9238;
+    border-style: hidden;
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: #cecbd4;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #5c606d;
+}
+
+/* sub nav content begins */
+.subnav {
+    float: left;
+    overflow: hidden;
+}
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #f1f1f1;
+    width: 100%;
+    z-index: 1;
+}
+
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+/* first sub nav content begins */
+#nav {
+    list-style: none inside;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#nav li {
+    display: block;
+    position: relative;
+    float: left;
+    background: #f1f1f1;
+}
+
+/* menu items */
+#nav li a {
+    display: block;
+    padding: 0;
+    text-decoration: none;
+    width: 200px;
+    line-height: 35px;
+    color: black;
+}
+
+/* sublists get smaller font */
+#nav li li a {
+    font-size: 80%;
+}
+
+#nav li:hover {
+    background: #ddd;
+}
+
+/* hides sublists */
+#nav ul {
+    position: absolute;
+    padding: 0;
+    left: 0;
+    display: none;
+}
+
+/* hides sub-sublists */
+#nav li:hover ul ul {
+    display: none;
+}
+
+/* shows sublist on hover */
+#nav li:hover ul {
+    display: block;
+}
+
+/* shows sub-sublist on hover */
+#nav li li:hover ul {
+    display: block;
+
+    margin-left: 200px;
+    margin-top: -35px;
+}
+/* sub nav content ends */
+
+/* footer and nav  css starts */
+nav,
+button {
+    font-family: Basic Commercial, sans-serif;
+    text-transform: uppercase;
+
+}
+footer input {
+    margin-top: 25px;
+    padding: 5px 53px;
+    text-align: left;
+}
+footer button {
+    background-color: grey;
+    margin-top: 25px;
+}
+/* footer  css  ends */
+
+/* Contact  page css  starts */
+.Contact
+{
+    position: relative;
+    min-height: 80vh;
+    padding: 100px 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.Contact .content
+{
+    max-width: 800px;
+    text-align: center;
+}
+.Contact .content h2
+{
+    font-size: 36px;
+    font-weight: 500;
+    color: black;
+}
+
+.Contact .content p
+{
+    font-weight: 300;
+    color: black;
+}
+
+.containerCK {
+    background-color: #f2f2f2;
+    padding: 5px 20px 15px 20px;
+    width: 50%;
+    margin-left: 25%;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+}
+
+.btnCK {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.container
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.container .contactInfo
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container .contactInfo .box
+{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.container .contactInfo .box .icon
+{
+    min-width: 60px;
+    height: 60px;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 25px;
+}
+.container .contactInfo .box .text
+{
+    display: flex;
+    margin-left: 20px;
+    font-size: 15px;
+    color: black;
+    flex-direction: column;
+    font-weight: 100;
+
+}
+.container .contactInfo .box .text h3
+{
+    font-size: 22px;
+    margin-left: -3px;
+    font-weight: 500;
+    color: black;
+}
+.ContactForm
+{
+    width: 40%;
+    padding: 40px;
+    background: white;
+}
+.ContactForm h2
+{
+    font-size: 28px;
+    color: black;
+    font-weight: 500;
+}
+
+.ContactForm .InputBox
+{
+    position: relative;
+    width:  100%;
+    margin-top: 10px;
+}
+
+.ContactForm .InputBox input,
+.ContactForm .InputBox textarea
+{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 14px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+.ContactForm .InputBox span
+{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 15px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+.ContactForm .InputBox input:focus ~ span,
+.ContactForm .InputBox input:valid ~ span,
+.ContactForm .InputBox textarea:focus ~ span,
+.ContactForm .InputBox textarea:valid ~ span
+
+{
+    color: black;
+    font-size: 10px;
+    transform: translateY(-20px);
+}
+.ContactForm .InputBox input[type ="submit"]
+{
+    width: 100px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
+}
+@media (max-width: 991px)
+{
+    .Contact{
+        padding: 50px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container .contactInfo{
+        margin-bottom: 40px;
+    }
+    .container .contactInfo, .ContactForm{
+        width: 100;
+    }
+
+}
+/* Contact  page css  ends */
+
+/* About  page css  starts */
+.About{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    color: whitesmoke;
+}
+
+.rows{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 600;
+    color: black;
+}
+
+.about-col{
+    flex-basis: 31%;
+    background: grey;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+h3{
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.about-col :hover{
+    box-shadow: 0 0 20px 0px black ;
+}
+
+@media (max-width:700px) {
+    .row{
+        flex-direction: column;
+    }
+}
+
+.location{
+    width: 100%;
+    margin: auto;
+    padding-top: 20px 0;
+}
+
+.location iframe{
+
+    width: 100%;
+}
+/* About  page css  ends */
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.form {
+    background-color: white;
+    padding: 20px 15px;
+    box-shadow: 0px 10px 25px rgba(92, 99, 105, .2);
+}
+
+form,
+input {
+    font-family: Basic Commercial, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #000000;
+    transition: color .2s ease-in-out;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+
+}
+
+.nletterBtn {
+    background-color: grey;
+    margin-top: 25px;
+    padding: 10px 88px;
+    font-size: 20px;
+    border-color: white;
+    text-transform: uppercase;
+}
+
+.nletterBtn:hover {
+    background-color: red;
+    transform: translateY(-2px);
+}

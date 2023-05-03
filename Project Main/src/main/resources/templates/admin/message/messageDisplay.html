@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Details</title>
+    <!-- CSS -->
+    <link th:href="@{/css/admin.css}" rel="stylesheet"/>
+</head>
+<body>
+<h1 style="text-align: center">Messages</h1>
+<div style="display: flex; justify-content: center; align-items: center; height: 65vh;">
+
+                    <table th:each="messages : ${messages}">
+                        <tr>
+                            <th>Id</th>
+                            <td th:text="${messages.id}"></td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td th:text="${messages.name}"></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td th:text="${messages.email}"></td>
+                        </tr>
+                        <tr>
+                            <th>Phone No.</th>
+                            <td th:text="${messages.phone}"></td>
+                        </tr>
+                        <tr>
+                            <th>Message</th>
+                            <td th:text="${messages.message}"></td>
+                        </tr>
+
+                    </table>
+                    </div>
+
+</body>
+</html>
