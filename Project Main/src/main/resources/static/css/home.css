@@ -82,7 +82,7 @@ p1 {
 
 
 #image1 {
-    background-image: linear-gradient(to left, rgb(253, 251, 251), rgb(0, 68, 255, 0.6)), url('../img/image1.jpeg');
+    background-image: linear-gradient(to left, rgb(253, 251, 251), rgb(211,211,211, 0.6)), url('../Images/accessories.jpeg');
     height: 700px;
     background-size: cover;
     color: white;
